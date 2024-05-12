@@ -8,6 +8,7 @@ The Scrabble Book Game presents a twist on the traditional Scrabble format, wher
 - **Bag Class**: Manages a collection of tiles with quantities for each letter. Implements the Singleton pattern.
 - **Word Class**: Represents a word placement on the game board, including tiles, position, and orientation.
 - **Board Class**: Manages the game board state and tile placements. Implements methods for checking word legality and calculating scores.
+- **Dictionary**: The server utilizes a dictionary that incorporates caching, operating based on LRU (Least Recently Used) and LFU (Least Frequently Used) algorithms. If the word is not found in the cache, the server then checks using a BloomFilter algorithm. Finally, if the word is still not found, it checks in an IO file. This multi-step process optimizes word retrieval efficiency, enhancing overall game performance.
  - **Server**: The server side of the Scrabble Book Game manages game operations using sockets. It listens for and accepts client connections, handles client requests, processes game moves, and sends updates back to clients. Sockets enable communication between the server and clients, facilitating data transfer for seamless gameplay.
 
     ![image](./arih.png)
